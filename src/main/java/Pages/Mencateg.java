@@ -11,12 +11,15 @@ import java.time.Duration;
 
 public class Mencateg extends Base {
 
+     // This class actually contains the Men category page elements and methods which handle these elements to be used in test cases
 
+    // A method to open the Men category page
     public static void openmencat(){
         WebElement Mencat = driver.findElement(By.xpath("//a[contains(text(),'Men')]"));
         Mencat.click();
     }
 
+    // A method to choose a product to be added
     public static void choosesecondproduct(){
       //  driver.navigate().refresh();
 
@@ -37,6 +40,7 @@ public class Mencateg extends Base {
 */
     }
 
+    // A method to select a size
     public static void choosethesize (){
         WebElement choosesize = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/main/div/div[2]/div[1]/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button[2]"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -44,12 +48,14 @@ public class Mencateg extends Base {
     }
 
 
+    // A method to add the product to the cart
     public static void addsecondproducttocart(){
         WebElement addsecondtocart = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/main/div/div[2]/div[1]/div[2]/div/div[2]/div/div[3]/div/div[2]/button"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         addsecondtocart.click();
-
     }
+
+    // A method to open the shopping bag page
     public static void gotoshopping(){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.tamanna.com/cart");
